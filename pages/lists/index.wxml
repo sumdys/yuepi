@@ -1,0 +1,28 @@
+<loading hidden="{{hideHeader}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<scroll-view class='recombox' style="height: 1208rpx" scroll-y="true" bindscrolltoupper="onPullDownRefresh" bindscrolltolower="onReachBottom">
+  <block wx:for="{{itemList}}" wx:key="{{item}}">
+    <navigator url='../details/index?id=1'>
+      <view class="recom">
+        <image class="produ" src="http://www.ipyue.com/Public/uploads{{item['images'][0]}}" />
+        <view class='title'>
+          <text class='title_1'>{{item.title}}</text>
+          <view class='title_bottom'>
+            <!-- <view class='title_3'>
+                <text>秀秀要</text>
+                <text>秀秀花</text>
+                <text class='hidden_border'>士大夫的</text>
+              </view> -->
+            <text class='title_2'>￥<text class='price'>{{item.price}}</text></text>
+          </view>
+
+        </view>
+      </view>
+    </navigator>
+  </block>
+</scroll-view>
+<view class="bottom" hidden="{{hideBottom}}">
+  <view>{{loadMoreData}}</view>
+  <view>{{refreshTime}}</view>
+</view>

@@ -1,0 +1,74 @@
+<view class="container">
+  <swiper
+  class="binner"
+   vertical="{{vertical}}"
+   autoplay="{{autoplay}}"
+   interval="{{interval}}"
+   duration="{{duration}}"
+   indicator-dots="{{indicatorDots}}">
+    <block wx:for="{{topimg}}" wx:key="item">
+      <swiper-item>
+        <image src="{{item.image}}" class="slide-image"></image>
+      </swiper-item>
+    </block>
+    <!-- <view class="city" bindtap="bindViewTap" >
+         <text class="current">{{city}}</text>
+    </view> -->
+  </swiper>
+  <view class="services">
+      <view class="wraper">
+      <block wx:for="{{serverlist}}" wx:key="{{item}}" >
+      <navigator url='../lists/index?type={{item.type}}'>
+       <view class="list">
+          <image src="{{item.imageUrl}}"/>
+          <text class="desc">{{item.description}}</text>
+       </view>
+       </navigator>
+      </block>
+     </view>
+  </view>
+  <!-- <view class="wrap">
+     <view class="cleanitem flex">
+       <view class="left" bindtap="gotoserver">
+         <view>
+           <text class="title">{{title}}</text>
+           <text class="desc">{{desc}}</text>
+           <image src="{{image}}"/>
+         </view>
+       </view>
+       <view class="right" bindtap="gotoserver">
+         <block wx:for="{{clean}}" wx:key="{{item}}">
+           <view class="flex box">
+             <view class="flex-auto">
+               <text class="title">{{item.title}}</text>
+               <text class="desc">{{item.desc}}</text>
+             </view>
+             <image src="{{item.img}}"/>
+           </view>
+         </block>
+       </view>
+     </view>
+  </view> -->
+  <view class="recombox">
+    <text class="hot">{{hot}}</text>
+    <block wx:for="{{recomlist}}" wx:key="{{item}}">
+    <navigator url='../details/index?id=1'>
+      <view class="recom">        
+        <image class="produ" src="http://www.ipyue.com/Public/uploads{{item['images'][0]}}"/>
+        <view class='title'>
+          <text class='title_1'>{{item.title}}</text>
+          <view class='title_bottom'>
+            <!-- <view class='title_3'>
+              <text>秀秀要</text>
+              <text>秀秀花</text>
+              <text class='hidden_border'>士大夫的</text>
+            </view> -->
+            <text class='title_2'>￥<text class='price'>{{item.price}}</text></text>
+          </view>
+          
+        </view>
+      </view>
+    </navigator>  
+    </block>
+  </view>
+</view>
