@@ -13,8 +13,14 @@
 
 <view class="summary">
   <text class="title">{{goodsDetails.title}}</text>
+  <view>
+  <block wx:for="{{goodsDetails.tags}}" wx:key="">
+    <text class='goods_tag'>{{item}}</text>  
+    </block>
+  </view>
 </view>
 <view class="detail">
+{{goodsDetails.feature}}
   <image wx:for="{{goods.detail}}" src="{{item}}" wx:key="" mode="widthFix"></image>
 </view>
 <view class="footer">

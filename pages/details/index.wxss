@@ -15,6 +15,7 @@ page {
 .top_swiper{
   height: 300px;
 }
+/*商品价格*/
 .float_price{
   position:absolute;
   bottom:0px;
@@ -24,13 +25,24 @@ page {
   padding:10rpx;
 
 }
+.goods_tag{
+  display: inline-block;
+    padding: 2px 12px;
+    background: #ff5a61;
+    font-size: 12px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    color: #fff;
+}
 /*contains title & price*/
 .summary {
 	display: flex; 
 	flex-direction: column; 
 	justify-content: space-between;
 	background: white;
-	margin: 20rpx 0;
+	margin: 20rpx 0rpx;
+  padding-left: 10rpx;
 }
 
 /*goods title*/
