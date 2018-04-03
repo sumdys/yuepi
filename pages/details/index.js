@@ -9,33 +9,33 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log('11111111')
     var that = this
-
     // 商品详情
     wx.request({
-      url: 'http://huanqiuxiaozhen.com/wemall/goods/inqgoods?id=' + options.id,
+      url: 'http://www.ipyue.com/api/freetour/detail/id/68',
       method: 'GET',
       data: {},
       header: {
         'Accept': 'application/json'
       },
       success: function (res) {
-        //console.log(res.data.data);
-        that.data.shopppingDetails = res.data.data;
-
+        // console.log(res.data.data);
+        var goodsDetails = res.data.data;
         var goodsPicsInfo = [];
         var goodsPicsObj = {};
-        var goodspic = res.data.data.goodspics;
-        var goodspics = goodspic.substring(0, goodspic.length - 1);
-        var goodspicsArr = goodspics.split("#");
+        var goodspic = res.data.data.images;
+        //var goodspics = goodspic.substring(0, goodspic.length - 1);
+        var goodspicsArr = goodspic;
         for (var i = 0; i < goodspicsArr.length; i++) {
+          // console.log(goodspicsArr[i]);
           goodsPicsInfo.push({
             "picurl": goodspicsArr[i]
           });
         }
+        console.log(goodsDetails);
         that.setData({
-          goodsPicsInfo: goodsPicsInfo
+          goodsPicsInfo: goodsPicsInfo,
+          goodsDetails: goodsDetails
         })
       }
     })

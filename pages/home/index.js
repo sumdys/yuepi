@@ -70,14 +70,14 @@ Page({
   loadCity:function(longitude,latitude){
     var page =this;
     wx.request({
-      url: 'http://api.map.baidu.com/geocoder/v2/?ak=btsVVWf0TM1zUBEbzFz6QqWF&callback=renderReverse&location='+latitude+','+longitude+'&output=json&pois=1',
+      url: 'http://api.map.baidu.com/geocoder/v2/?ak=R9rSDQKktOiriHd27YG5XYtk&callback=renderReverse&location='+latitude+','+longitude+'&output=json&pois=1',
       data: {},
       header:{
         'Content-Type':'application/json'
       },
       success: function(res){
         // success
-        // console.log(res);
+        //  console.log(res);
         var str1=res.data;
         var str2=str1.replace('renderReverse&&renderReverse(',"");
         var str3=str2.substring(0,str2.length-1);
@@ -109,7 +109,7 @@ Page({
         'Accept':'application/json'
       },
       success:(res) => {
-        console.log(res.data);
+        // console.log(res.data);
         this.setData({
           topimg:res.data.topimg,
           serverlist:res.data.serverlist,
