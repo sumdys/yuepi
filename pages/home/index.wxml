@@ -52,7 +52,7 @@
   <view class="recombox">
     <text class="hot">{{hot}}</text>
     <block wx:for="{{recomlist}}" wx:key="{{item}}">
-    <navigator url='../details/index?id=1'>
+    <navigator url='../details/index?id={{item.id}}'>
       <view class="recom">        
         <image class="produ" src="http://www.ipyue.com/Public/uploads{{item['images'][0]}}"/>
         <view class='title'>

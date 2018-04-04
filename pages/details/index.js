@@ -1,3 +1,4 @@
+var WxParse = require('../../wxParse/wxParse.js');
 var app = getApp()
 Page({
   data: {
@@ -9,10 +10,11 @@ Page({
   },
 
   onLoad: function (options) {
+    // console.log(options);
     var that = this
     // 商品详情
     wx.request({
-      url: 'http://www.ipyue.com/api/freetour/detail/id/68',
+      url: 'http://www.ipyue.com/api/freetour/detail/id/' + options.id,
       method: 'GET',
       data: {},
       header: {
@@ -33,9 +35,18 @@ Page({
           });
         }
         console.log(goodsDetails);
+        var feature = goodsDetails.feature
+        var reference_route = goodsDetails.reference_route
+        feature = feature.replace(/http:.*?.com/gi,'');
+        console.log(feature);
+        feature = feature.replace(/\/Public/gi,'http://www.ipyue.com/Public');
+        reference_route = reference_route.replace(/<div style=.*?>/gi,'')
+        WxParse.wxParse('feature', 'html', feature, that, 5);
+        WxParse.wxParse('reference_route', 'html', reference_route, that, 5);
+        // console.log(feature);
         that.setData({
           goodsPicsInfo: goodsPicsInfo,
-          goodsDetails: goodsDetails
+          goodsDetails: goodsDetails,
         })
       }
     })

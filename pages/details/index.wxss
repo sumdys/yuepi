@@ -60,7 +60,11 @@ page {
 
 /*详情图片底部边距*/
 .detail {
-	margin-bottom: 50px;
+	margin-bottom: 55px;
+  background: white;
+  font-size: 28rpx;
+  padding: 15rpx;
+  letter-spacing:0.05rem;
 }
 
 .detail image{
@@ -119,3 +123,4 @@ page {
 	height: 48rpx;
 	padding-top: 5px; 
 }
+

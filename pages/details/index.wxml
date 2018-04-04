@@ -1,3 +1,4 @@
+<import src="../../wxParse/wxParse.wxml" />
 <view class='header_top'>
   <swiper indicator-dots="true" autoplay="{{autoplay}}" interval="3000" duration="1200" class='top_swiper'>
     <block wx:for="{{goodsPicsInfo}}" wx:key="">
@@ -20,8 +21,9 @@
   </view>
 </view>
 <view class="detail">
-{{goodsDetails.feature}}
-  <image wx:for="{{goods.detail}}" src="{{item}}" wx:key="" mode="widthFix"></image>
+  <template is="wxParse" data="{{wxParseData:feature.nodes}}"/>
+  <view style='padding:5px;'></view>
+  <template is="wxParse" data="{{wxParseData:reference_route.nodes}}"/>
 </view>
 <view class="footer">
   <view class="opt-buttons">

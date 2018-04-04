@@ -155,7 +155,7 @@
   position: absolute;
   bottom: 0px;
   background:rgba(0,0,0,0.5);
-  height: 50px;
+  height: 45px;
   width: 100%;
   color: white;
 }
@@ -164,6 +164,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size:30rpx;
 }
 .title_bottom{
   margin-top: 5px;
